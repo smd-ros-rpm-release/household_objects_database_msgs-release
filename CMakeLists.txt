@@ -5,6 +5,7 @@ set(MSG_DEPS
   std_msgs
   geometry_msgs
   shape_msgs
+  object_recognition_msgs
   )
 
 find_package(catkin REQUIRED COMPONENTS message_generation ${MSG_DEPS})
@@ -33,5 +34,5 @@ add_service_files(DIRECTORY srv FILES ${SRV_FILES})
 generate_messages(DEPENDENCIES ${MSG_DEPS})
 
 catkin_package(
-  CATKIN_DEPENDS message_generation
+  CATKIN_DEPENDS message_generation ${MSG_DEPS}
   )
